@@ -38,7 +38,7 @@ function initialize() {
         // setup matrix rain style
         context.fillStyle="rgba(0,0,0,0.05)";
         context.fillRect(0,0,canvas.width, canvas.height);
-        context.fillStyle= "#0f0"
+        context.fillStyle= "#0f0";
         context.font = pixelHeight + "px arial";
 
         // logic to create matrix rain effect
