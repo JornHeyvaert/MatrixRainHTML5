@@ -33,35 +33,36 @@ function initialize() {
 
     context = canvas.getContext('2d'); 
 
-    function createMatrix() {
+        function createMatrix() {
 
-        // setup matrix rain style
-        context.fillStyle="rgba(0,0,0,0.05)";
-        context.fillRect(0,0,canvas.width, canvas.height);
-        context.fillStyle= "#0f0";
-        context.font = pixelHeight + "px arial";
+            // setup matrix rain style
+            context.fillStyle="rgba(0,0,0,0.05)";
+            context.fillRect(0,0,canvas.width, canvas.height);
+            context.fillStyle= "#0f0";
+            context.font = pixelHeight + "px arial";
 
-        // logic to create matrix rain effect
-            for (var i = 0; i < numbers.length; i++) {
-                textZero = zeroNumber;
-                textOne = oneNumber;
+            // logic to create matrix rain effect
+                for (var i = 0; i < numbers.length; i++) {
+                    textZero = zeroNumber;
+                    textOne = oneNumber;
 
-                if ( i % 2 == 1)
-                {
-                    context.fillText(textZero,i * pixelHeight, numbers[i] * pixelHeight);
-                }
-                else
-                {
-                    context.fillText(textOne,i * pixelHeight, numbers[i] * pixelHeight);	
-                }
+                    if ( i % 2 == 1)
+                    {
+                        context.fillText(textZero,i * pixelHeight, numbers[i] * pixelHeight);
+                    }
+                    else
+                    {
+                        context.fillText(textOne,i * pixelHeight, numbers[i] * pixelHeight);	
+                    }
 
-                if (numbers[i] * pixelHeight > canvas.height && Math.random() > 0.975)
-                {
+                    if (numbers[i] * pixelHeight > canvas.height && Math.random() > 0.975)
+                    {
                         numbers[i]=0;
+                    }
+                    
+                    numbers[i]++;
                 }
-                
-                numbers[i]++;
-            }
         }
+        
     setInterval(createMatrix,120);
 }
