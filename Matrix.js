@@ -43,7 +43,7 @@ function initialize() {
 
         // logic to create matrix rain effect
             for (var i = 0; i < numbers.length; i++) {
-                textZero = zeroNumber,
+                textZero = zeroNumber;
                 textOne = oneNumber;
 
                 if ( i % 2 == 1)
